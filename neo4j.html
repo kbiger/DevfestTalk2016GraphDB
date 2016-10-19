@@ -56,6 +56,95 @@
 
         <section>
             <section>
+                <h1>Persistence des données</h1>
+                <h2>Un peu d'histoire</h2>
+            </section>
+            <section>
+                <div style="float: center;">
+                    <img src="lib/images/carte_perfor.jpg" alt="CartePerfor" id="CartePerfor" height="150%" width="150%" style="background:none; border:none; box-shadow:none;">
+                </div>
+                <aside class="notes">
+                    Problèmes :
+                    - impossible de lire indexer rechercher les données
+                    - references croisées
+                    - éliminer
+                    L'industrie à évolué...
+                </aside>
+            </section>
+            <section>
+                <div style="float: center;">
+                    <img src="lib/images/relational_database.jpg" alt="relational_database" id="relational_database" height="120%" width="120%"
+                         style="background:none; border:none; box-shadow:none;">
+                </div>
+                <aside class="notes">
+                    tables, tables relationnelles
+                    elles sont parfois lisibles humainement
+                    Mais dès que vous commencez à les normaliser (supprimer les duplications, améliorer l'intégrité des données...)
+                    la lisibilité humaine devient compliquée
+                    Références de nombres automatiquement générés pour être des clés
+                    Difficulté à lire les données sans requête join
+                    MAIS les bases relationnnelles apportent une fonctionnalité clé :
+                </aside>
+            </section>
+            <section>
+                <h1>ACID</h1>
+                <h2>atomicité, cohérence, isolation, durabilité</h2>
+                <aside class="notes">
+                    transactions ACID apportées par les SGBDR
+                    quand nous enregistrons une donnée nous sommes surs que la donnée est là et que nous pourrons la récupérer dans le futur
+                    quand nous faisons une opération sur une donnée, cette opération est effectuée ou alors l'opération subit un roll-back
+                    Dès que vous faites tout un tas d'opérations sur ces bases qui ont la qualité d'être ACID, ces qualités apportent des inconvénients, comme les performances...
+                </aside>
+            </section>
+            <section>
+                <div style="float: center;">
+                    <img src="lib/images/index_relational.jpg" alt="index_relational" id="index_relational" height="120%" width="120%"
+                         style="background:none; border:none; box-shadow:none;">
+                </div>
+                <aside class="notes">
+                    Il est plus lent et difficile de récupérer les données.
+                    Donc on a ajouté les index
+                    Les index paraissent très pratiques si on imagine qu'il suffit d'ouvrir la porte adaptée et de récupérer la carte que l'on souhaite.
+                    Imaginons maintenant une requête avec une douzaine ou quelque dizaines de joins avec pour chacune un lookup sur les index... ça devient cher en ressources.
+                    Le résultat? On augmente le matériel, on améliore le matériel
+                    Et ensuite...
+                </aside>
+            </section>
+            <section>
+                <div style="float: center;">
+                    <img src="lib/images/cloud.jpg" alt="cloud" id="cloud" height="120%" width="120%"
+                         style="background:none; border:none; box-shadow:none;">
+                </div>
+                <aside class="notes">
+                    Et ensuite arrive le cloud (lenticular cloud)
+                    On peut utiliser encore plus de données
+                    Mais...
+                </aside>
+            </section>
+            <section>
+                <div style="float: center;">
+                    <img src="lib/images/data_explosion.jpg" alt="data_explosion" id="data_explosion" height="120%" width="120%"
+                         style="background:none; border:none; box-shadow:none;">
+                </div>
+                <aside class="notes">
+                    Mais les données explosent
+                    De plus en plus de données dans nos applications.
+                    De plus en plus de données que l'on veut conserver
+                    Et de plus en plus de données que l'on veut analyser
+                    Comment peut-on avec ce modèle aller dans ce sens?...
+                </aside>
+            </section>
+            <section>
+                <h1><s>ACID</s></h1> <h1>NoSQL</h1>
+                <aside class="notes">
+                    ACID nous ralenti, c'est la première chose à enlever
+                    NoSQL
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
                 <h1>NoSQL Kezako</h1>
                 <h2>Not Only SQL</h2>
             </section>
@@ -66,18 +155,18 @@
             </section>
             <section>
                 <h1>NoSQL</h1>
-                <h2>Columns</h2>
-                <p>Cassandra, HTable, BigTable...</p>
-                <p>Bases OLAP</p>
-                <p>requêtes larges sur des propriétés spécifiques</p>
+                <h2>Key Value</h2>
+                <p>Redis, Riak...</p>
+                <p>Grosse table de hashage</p>
                 <aside class="notes">
                 </aside>
             </section>
             <section>
                 <h1>NoSQL</h1>
-                <h2>Key Value</h2>
-                <p>Redis, Riak...</p>
-                <p>Grosse table de hashage</p>
+                <h2>Columns</h2>
+                <p>Cassandra, HTable, BigTable...</p>
+                <p>Bases OLAP</p>
+                <p>requêtes larges sur des propriétés spécifiques</p>
                 <aside class="notes">
                 </aside>
             </section>
