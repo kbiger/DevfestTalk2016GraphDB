@@ -396,13 +396,95 @@
                 </ul>
             </section>
             <section>
-                <h1>Neo4j</h1>
-                <h2>Requêtage avec Cypher</h2>
+                <h1>Requêtage avec Cypher</h1>
+                <h3>ASCII compatible</h3>
+            </section>
+            <section>
+                <pre><code class="cypher">
+(A)--(B)
+                 </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+(A)-->(B)
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+(A)-[:LOVES]->(B)
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+(Leo)-[:LOVES]->(Lea)
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+(Leo:ROBOT)-[:LOVES]->(Lea:ROBOT)
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+MATCH (foo:ROBOT)-[rel:LOVES]->(bar:ROBOT)
+WHERE rel.duration > 5
+RETURN foo.name, bar.name, rel.duration
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+CREATE (you:PERSON {name:"You"})
+RETURN you
+                </code></pre>
+            </section>
+            <section>
+                <pre><code class="cypher">
+MATCH (you:PERSON {name:"You"})
+CREATE (you)-[like:LIKE]->(neo:DATABASE {name:"Neo4j" })
+RETURN you,like,neo
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Architecture</h1>
+                <p>Deux concepts sont incompatibles :</p>
+                <p>disponibilité & fiabilité</p>
+                <aside class="notes">
+                    disponibilité : je réponds toujours quoi qu'on me demande
+                    fiabilité : je réponds toujours correctement quoi qu'on me demande
+                    avec les colonnes par exemple plein de replication de données
+                    on peut dire que le dernier changement est le bon...
+                    avec un graphe c'est différent, les relations sont symetriques, il ne suffit pas que A sache qu'il aime B mais B doit savoir qu'il est aimé par A
+                </aside>
             </section>
             <section>
                 <h1>Architecture</h1>
-                <p>edge & core</p>
-                <p>reliability - consistency</p>
+                <p>Pour les graphes</p>
+                <p>fiabilité > disponibilité</p>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h1>Architecture</h1>
+                <img src="/lib/images/neo4j_archi.png" alt="neo4j_archi" id="neo4j_archi" height="70%" width="70%" style="background:none; border:none; box-shadow:none;">
+                <aside class="notes">
+                    <p>serveurs robustes : Core serveurs. Enregistrements fiables</p>
+                    <p>read-only Edge serveurs. Lecture scalable sans compromettre la stabilité</p>
+                    <p>protocol raft utilisé pour remonter les logs de transactions de core vers edges</p>
+                </aside>
+            </section>
+            <section>
+                <h1>Architecture</h1>
+                <h3>Choisir au moment de la requête</h3>
+                <ol>
+                    <li>Read any (edge></li>
+                    <li>RYOW (edge)</li>
+                    <li>Read any (core)</li>
+                    <li>Read leader (core)</li>
+                    <li>Linearizable (quorate core)</li>
+                </ol>
             </section>
         </section>
 
