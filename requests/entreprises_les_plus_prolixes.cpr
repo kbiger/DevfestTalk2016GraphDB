@@ -1,0 +1,4 @@
+//entreprises les plus prolixes
+MATCH (society:SOCIETY)-[:SOCIETY]-(p:PERSON)-[:SHOWS]-(show)
+RETURN society.name, count(distinct show) AS sessions
+ORDER BY sessions DESC

@@ -1,0 +1,4 @@
+//speakers les plus prolixes
+MATCH (p:PERSON)-[:SHOWS]-(s)
+RETURN p.name, count(s) AS sessions
+ORDER BY sessions DESC

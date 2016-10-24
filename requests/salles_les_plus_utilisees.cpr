@@ -1,0 +1,4 @@
+//salles les plus utilisées
+MATCH (r:ROOM)-[:ROOM]-(s)
+RETURN r.name, count(s) AS sessions
+ORDER BY sessions DESC

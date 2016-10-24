@@ -1,0 +1,4 @@
+//infos sur un track
+MATCH (t:TRACK)-[*1..2]-(n)
+WHERE t.name = "cloud"
+RETURN t,n
