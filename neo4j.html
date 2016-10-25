@@ -219,6 +219,11 @@
                     <li>Bases Colonnes</li>
                 </ul>
                 <aside class="notes">
+                    <p>agrégats d'objets métier</p>
+                    <p>unité d'enregistrement</p>
+                    <p>grappes d'objets</p>
+                    <p>référence uniquement vers le noeud root de la grappe</p>
+                    <p>exemple d'une commande et des items, un seul aggrégat pour tou ça</p>
                     <p>sharding</p>
                 </aside>
             </section>
@@ -229,6 +234,8 @@
                     <li>Bases relationnelles</li>
                 </ul>
                 <aside class="notes">
+                    <p>possibilité de voir les données sous différents angles/dimensions</p>
+                    <p>avec les aggrégats -> necessité du map/reduce pour ça</p>
                     <p>pas de sharding</p>
                 </aside>
             </section>
@@ -482,7 +489,7 @@ RETURN you,like,neo
                 <h1>Architecture</h1>
                 <h3>Choisir au moment de la requête</h3>
                 <ol>
-                    <li>Read any (edge></li>
+                    <li>Read any (edge)</li>
                     <li>RYOW (edge)</li>
                     <li>Read any (core)</li>
                     <li>Read leader (core)</li>
