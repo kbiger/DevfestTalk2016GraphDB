@@ -38,9 +38,8 @@
 
 <div class="reveal">
 
-    <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-        <!--<section data-background="lib/images/artificial-friends1.png" data-background-size="800px">-->
+
         <section>
             <h1>NoSQL Graphes</h1>
             <h3>Découvrir les bases NoSQL orientées graphes avec Neo4j</h3>
@@ -50,13 +49,23 @@
             <p>
                 <small>Created by <a href="mailto:kevin@biger.bzh">Kevin Biger</a> / <a href="http://twitter.com/kevin_biger">@kevin_biger</a></small>
             </p>
-            <aside class="notes">
-            </aside>
+        </section>
+
+        <section>
+            <h2>Kevin Biger</h2>
+            <h3>@kevin_biger</h3>
+            <h3>kevin@biger.bzh</h3>
+            <div style="float: right;">
+                <img src="lib/images/neo4j_certified.png" alt="neo_cert" id="neo_cert" height="140%" width="140%" style="background:none; border:none; box-shadow:none;">
+            </div>
+            <div style="float: center;">
+                <img src="lib/images/SQLI.png" alt="SQLI" id="SQLI_logo" height="30%" width="30%" style="background:none; border:none; box-shadow:none;">
+            </div>
         </section>
 
         <section>
             <section>
-                <h1>Persistence des données</h1>
+                <h1>Persistence - données</h1>
                 <h2>Un peu d'histoire</h2>
             </section>
             <section>
@@ -203,96 +212,6 @@
 
         <section>
             <section>
-                <h1>Agregats</h1>
-                <blockquote cite="http://martinfowler.com/bliki/AggregateOrientedDatabase.html">
-                    &ldquo;Use aggregate-oriented databases when you are manipulating clear aggregates (especially if you are running on a cluster)
-                    and use graph databases (or a relational database) when you want to manipulate that data in different ways. -- Martin Fowler&rdquo;
-                </blockquote>
-                <aside class="notes">
-                </aside>
-            </section>
-            <section>
-                <h1>Agrégats</h1>
-                <ul>
-                    <li>Bases Clé/Valeur</li>
-                    <li>Bases Documents</li>
-                    <li>Bases Colonnes</li>
-                </ul>
-                <aside class="notes">
-                    <p>agrégats d'objets métier</p>
-                    <p>unité d'enregistrement</p>
-                    <p>grappes d'objets</p>
-                    <p>référence uniquement vers le noeud root de la grappe</p>
-                    <p>exemple d'une commande et des items, un seul aggrégat pour tou ça</p>
-                    <p>sharding</p>
-                </aside>
-            </section>
-            <section>
-                <h1>Pas d'agrégats</h1>
-                <ul>
-                    <li>Bases graphes</li>
-                    <li>Bases relationnelles</li>
-                </ul>
-                <aside class="notes">
-                    <p>possibilité de voir les données sous différents angles/dimensions</p>
-                    <p>avec les aggrégats -> necessité du map/reduce pour ça</p>
-                    <p>pas de sharding</p>
-                </aside>
-            </section>
-        </section>
-
-        <section>
-            <section>
-                <h1>Dimensions</h1>
-            </section>
-            <section>
-                <h1>Dimensions</h1>
-                <section>
-                    <img src="/lib/images/hypercube.png" alt="hypercube" id="hypercube" height="60%" width="60%" style="background:none; border:none; box-shadow:none;">
-                </section>
-                <aside class="notes">
-                    <p>data scientists</p>
-                    <p>plusieurs dimensions</p>
-                    <p>etl jobs</p>
-                    <p>transfo, transfos,transnfos,transfos....tadaaaa!</p>
-                </aside>
-            </section>
-            <section>
-                <h1>Dimensions</h1>
-                <section>
-                    <img src="/lib/images/olap_cube.jpg" alt="olap_cube" id="olap_cube" height="60%" width="60%" style="background:none; border:none; box-shadow:none;">
-                </section>
-                <aside class="notes">
-                    <p>OLAP cube</p>
-                    <p>problème de l'hypercube, complexité</p>
-                </aside>
-            </section>
-            <section>
-                <h1>Dimensions</h1>
-                <h2>Graphe à plusieurs dimensions!</h2>
-                <aside class="notes">
-                    <p>toutes les dimensions dans un graphe (exemple du film/série)</p>
-                </aside>
-            </section>
-            <!--TODO slide sur le multi dimensions?-->
-        </section>
-
-        <section>
-            <h1>GrapheDB</h1>
-            <p>
-                <img src="/lib/images/neo4j_logo.png" alt="Logo Neo4j" id="neo4jLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>
-                <img src="/lib/images/orientdb_logo.png" alt="Logo OrientDB" id="orientDBLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>
-                <img src="/lib/images/Cayley-logo.png" alt="Logo Cayley" id="cayleyLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>...</p>
-        </section>
-
-        <section>
-            <section>
                 <h1>Graphes</h1>
                 <h2>Des nœuds et des relations</h2>
                 <img src="/lib/images/artificial-friends1.png" alt="Graphemini" id="Graphemini" height="40%" width="40%" style="background:none; border:none; box-shadow:none;">
@@ -322,6 +241,81 @@
                 <h1>Demo dans Neo4j</h1>
             </section>
         </section>
+
+        <section>
+            <!--<section>-->
+            <!--<h1>Agregats</h1>-->
+            <!--<blockquote cite="http://martinfowler.com/bliki/AggregateOrientedDatabase.html">-->
+            <!--&ldquo;Use aggregate-oriented databases when you are manipulating clear aggregates (especially if you are running on a cluster)-->
+            <!--and use graph databases (or a relational database) when you want to manipulate that data in different ways. &#45;&#45; Martin Fowler&rdquo;-->
+            <!--</blockquote>-->
+            <!--<aside class="notes">-->
+            <!--</aside>-->
+            <!--</section>-->
+            <section>
+                <h1>Agrégats</h1>
+                <h2>Clé/Valeur</h2>
+                <h2>Documents</h2>
+                <h2>Colonnes</h2>
+                <aside class="notes">
+                    <p>agrégats d'objets métier</p>
+                    <p>unité d'enregistrement</p>
+                    <p>grappes d'objets</p>
+                    <p>référence uniquement vers le noeud root de la grappe</p>
+                    <p>exemple d'une commande et des items, un seul aggrégat pour tou ça</p>
+                    <p>sharding</p>
+                </aside>
+            </section>
+            <section>
+                <h1>Pas d'agrégats</h1>
+                <h2>Graphes</h2>
+                <h2>SGBDR</h2>
+                <aside class="notes">
+                    <p>possibilité de voir les données sous différents angles/dimensions</p>
+                    <p>avec les aggrégats -> necessité du map/reduce pour ça</p>
+                    <p>pas de sharding</p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Dimensions</h1>
+            </section>
+            <section>
+                <h1>Dimensions</h1>
+                <section>
+                    <img src="/lib/images/hypercube.png" alt="hypercube" id="hypercube" height="60%" width="60%" style="background:none; border:none; box-shadow:none;">
+                </section>
+                <aside class="notes">
+                    <p>data scientists</p>
+                    <p>plusieurs dimensions</p>
+                    <p>etl jobs</p>
+                    <p>transfo, transfos,transnfos,transfos....tadaaaa!</p>
+                </aside>
+            </section>
+
+            <section>
+                <h1>Dimensions</h1>
+                <section>
+                    <img src="/lib/images/olap_cube.jpg" alt="olap_cube" id="olap_cube" height="60%" width="60%" style="background:none; border:none; box-shadow:none;">
+                </section>
+                <aside class="notes">
+                    <p>OLAP cube</p>
+                    <p>problème de l'hypercube, complexité</p>
+                </aside>
+            </section>
+
+            <section>
+                <h1>Dimensions</h1>
+                <h2>Graphe à plusieurs dimensions!</h2>
+                <aside class="notes">
+                    <p>toutes les dimensions dans un graphe (exemple du film/série)</p>
+                </aside>
+            </section>
+            <!--TODO slide sur le multi dimensions?-->
+        </section>
+
 
         <section>
             <section>
@@ -394,21 +388,51 @@
         </section>
 
         <section>
+            <h1>GrapheDB</h1>
+            <p>
+                <img src="/lib/images/neo4j_logo.png" alt="Logo Neo4j" id="neo4jLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+            </p>
+            <p>
+                <img src="/lib/images/orientdb_logo.png" alt="Logo OrientDB" id="orientDBLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+            </p>
+            <p>
+                <img src="/lib/images/Cayley-logo.png" alt="Logo Cayley" id="cayleyLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+            </p>
+            <p>...</p>
+        </section>
+
+        <section>
             <section>
                 <h1>Neo4j</h1>
                 <h2>Drivers</h2>
-                <ul>
-                    <li>Rest</li>
-                    <li>Bolt</li>
-                    <li>Java</li>
-                    <li>Javascript</li>
-                    <li>Python</li>
-                    <li>...</li>
-                </ul>
+                <h3>
+                    <ul>
+                        <li>Rest</li>
+                        <li>Bolt</li>
+                        <li>Java</li>
+                        <li>Javascript</li>
+                        <li>Python</li>
+                        <li>...</li>
+                    </ul>
+                </h3>
+            </section>
+            <section>
+                <h1>Neo4j</h1>
+                <h2>Use cases</h2>
+                <h3>
+                    <ul>
+                        <li>SFR → graphe réseau</li>
+                        <li>Meetic → recommandations</li>
+                        <li>Walmart → recommandations</li>
+                        <li>eBay → livraisons</li>
+                        <li>PanamaPapers → investigations</li>
+                        <li>...</li>
+                    </ul>
+                </h3>
             </section>
             <section>
                 <h1>Requêtage avec Cypher</h1>
-                <h3>ASCII compatible</h3>
+                <h2>ASCII compatible</h2>
             </section>
             <section>
                 <pre><code class="cypher">
@@ -459,8 +483,8 @@ RETURN you,like,neo
         <section>
             <section>
                 <h1>Architecture</h1>
-                <p>Deux concepts sont incompatibles :</p>
-                <p>disponibilité & fiabilité</p>
+                <h2>Deux concepts sont incompatibles :</h2>
+                <h2>disponibilité & fiabilité</h2>
                 <aside class="notes">
                     disponibilité : je réponds toujours quoi qu'on me demande
                     fiabilité : je réponds toujours correctement quoi qu'on me demande
@@ -471,8 +495,8 @@ RETURN you,like,neo
             </section>
             <section>
                 <h1>Architecture</h1>
-                <p>Pour les graphes</p>
-                <p>fiabilité > disponibilité</p>
+                <h2>Pour les graphes</h2>
+                <h2>fiabilité > disponibilité</h2>
                 <aside class="notes">
 
                 </aside>
@@ -488,7 +512,8 @@ RETURN you,like,neo
             </section>
             <section>
                 <h1>Architecture</h1>
-                <img src="/lib/images/deployment_architecture.png" alt="deployment_architecture" id="deployment_architecture" height="70%" width="70%" style="background:none; border:none; box-shadow:none;">
+                <img src="/lib/images/deployment_architecture.png" alt="deployment_architecture" id="deployment_architecture" height="70%" width="70%"
+                     style="background:none; border:none; box-shadow:none;">
                 <aside class="notes">
                 </aside>
             </section>
@@ -500,24 +525,35 @@ RETURN you,like,neo
             </section>
             <section>
                 <h1>Architecture</h1>
-                <h3>Choisir au moment de la requête</h3>
-                <ol>
-                    <li>Read any (edge)</li>
-                    <li>RYOW (edge)</li>
-                    <li>Read any (core)</li>
-                    <li>Read leader (core)</li>
-                    <li>Linearizable (quorate core)</li>
-                </ol>
+                <h2>Choisir au moment de la requête</h2>
+                <h3>
+                    <ol>
+                        <li>Read any (edge)</li>
+                        <li>RYOW (edge)</li>
+                        <li>Read any (core)</li>
+                        <li>Read leader (core)</li>
+                        <li>Linearizable (quorate core)</li>
+                    </ol>
+                </h3>
             </section>
         </section>
 
         <section>
-            <h1>Demo</h1>
+            <h1>Démo</h1>
+            <img src="/lib/images/A-Wing_Starfighter.png" alt="awing" id="awing" height="30%" width="30%"
+                 style="background:none; border:none; box-shadow:none;">
+            <img src="/lib/images/Speeder_Bike.jpg" alt="speeder_bike" id="speeder_bike" height="30%" width="30%"
+                 style="background:none; border:none; box-shadow:none;">
+            <img src="/lib/images/Millennium_Falcon.jpg" alt="millenium" id="millenium" height="40%" width="40%"
+                 style="background:none; border:none; box-shadow:none;">
         </section>
 
         <section>
-            <h1>Merci</h1>
+            <pre><code class="cypher">
+(Me:PERSON)-[:Thanks]->(You:Person)
+            </code></pre>
             <h2>Des questions?</h2>
+        </section>
         </section>
 
     </div>
