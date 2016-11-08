@@ -317,15 +317,20 @@
 
         <section>
             <section>
-                <h1>Triangles de stabilité</h1>
+                <h1>Un peu de théorie des graphes</h1>
+                <h2>Je n'ai pas pu m'en empêcher ;)</h2>
             </section>
             <section>
-                <h1>Théorie des graphes</h1>
+                <h1>Triangles de stabilité</h1>
                 <h2>Les graphes adorent les triangles, surtout les graphes "humains"</h2>
             </section>
             <section>
-                <h1>Théorie des graphes</h1>
-                <h3>Les triadic closures sont stables avec : </h3>
+                <h1>Les triadic closures sont stables avec : </h1>
+                <h2>3 relations positives</h2>
+                <h2>ou 2 négatives et 1 positive</h2>
+            </section>
+            <section>
+                <h1>3 relations positives</h3>
                 <div style="float: right">
                     <img src="/lib/images/tradic_1.png" alt="triadic_1" id="triadic_1" height="100%" width="100%" style="background:none; border:none; box-shadow:none;">
                 </div>
@@ -333,8 +338,7 @@
                 <p>ou 2 relations négatives et une positive</p>
             </section>
             <section>
-                <h1>Théorie des graphes</h1>
-                <h3>Les triadic closures sont stables avec : </h3>
+                <h1>2 positives et 1 négative</h3>
                 <div style="float: right">
                     <img src="/lib/images/tradic_2.png" alt="tradic_2" id="tradic_2" height="100%" width="100%" style="background:none; border:none; box-shadow:none;">
                 </div>
@@ -342,8 +346,7 @@
                 <p>ou 2 relations négatives et une positive</p>
             </section>
             <section>
-                <h1>Théorie des graphes</h1>
-                <h3>Les triadic closures sont stables avec : </h3>
+                <h1>1 positive et 2 négatives</h3>
                 <div style="float: right">
                     <img src="/lib/images/tradic_3.png" alt="tradic_3" id="tradic_3" height="100%" width="100%" style="background:none; border:none; box-shadow:none;">
                 </div>
@@ -386,37 +389,21 @@
         </section>
 
         <section>
-            <h1>GrapheDB</h1>
-            <p>
-                <img src="/lib/images/neo4j_logo.png" alt="Logo Neo4j" id="neo4jLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>
-                <img src="/lib/images/orientdb_logo.png" alt="Logo OrientDB" id="orientDBLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>
-                <img src="/lib/images/Cayley-logo.png" alt="Logo Cayley" id="cayleyLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
-            </p>
-            <p>...</p>
-        </section>
-
-        <section>
             <section>
-                <h1>Neo4j</h1>
-                <h2>Drivers</h2>
-                <h3>
-                    <ul>
-                        <li>Rest</li>
-                        <li>Bolt</li>
-                        <li>Java</li>
-                        <li>Javascript</li>
-                        <li>Python</li>
-                        <li>...</li>
-                    </ul>
-                </h3>
+                <h1>GrapheDB</h1>
+                <p>
+                    <img src="/lib/images/neo4j_logo.png" alt="Logo Neo4j" id="neo4jLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+                </p>
+                <p>
+                    <img src="/lib/images/orientdb_logo.png" alt="Logo OrientDB" id="orientDBLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+                </p>
+                <p>
+                    <img src="/lib/images/Cayley-logo.png" alt="Logo Cayley" id="cayleyLogo" height="20%" width="20%" style="background:none; border:none; box-shadow:none;">
+                </p>
+                <p>...</p>
             </section>
             <section>
-                <h1>Neo4j</h1>
-                <h2>Use cases</h2>
+                <h1>Neo4j - Use Cases</h1>
                 <h3>
                     <ul>
                         <li>SFR → graphe réseau</li>
@@ -424,6 +411,22 @@
                         <li>Walmart → recommandations</li>
                         <li>eBay → livraisons</li>
                         <li>PanamaPapers → investigations</li>
+                        <li>...</li>
+                    </ul>
+                </h3>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Neo4j - Drivers</h1>
+                <h3>
+                    <ul>
+                        <li>Rest</li>
+                        <li>Bolt</li>
+                        <li>Java</li>
+                        <li>Javascript</li>
+                        <li>Python</li>
                         <li>...</li>
                     </ul>
                 </h3>
@@ -500,13 +503,13 @@ RETURN you,like,neo
                 </aside>
             </section>
             <!--<section>-->
-                <!--<h1>Architecture</h1>-->
-                <!--<img src="/lib/images/neo4j_archi.png" alt="neo4j_archi" id="neo4j_archi" height="70%" width="70%" style="background:none; border:none; box-shadow:none;">-->
-                <!--<aside class="notes">-->
-                    <!--<p>serveurs robustes : Core serveurs. Enregistrements fiables</p>-->
-                    <!--<p>read-only Edge serveurs. Lecture scalable sans compromettre la stabilité</p>-->
-                    <!--<p>protocol raft utilisé pour remonter les logs de transactions de core vers edges</p>-->
-                <!--</aside>-->
+            <!--<h1>Architecture</h1>-->
+            <!--<img src="/lib/images/neo4j_archi.png" alt="neo4j_archi" id="neo4j_archi" height="70%" width="70%" style="background:none; border:none; box-shadow:none;">-->
+            <!--<aside class="notes">-->
+            <!--<p>serveurs robustes : Core serveurs. Enregistrements fiables</p>-->
+            <!--<p>read-only Edge serveurs. Lecture scalable sans compromettre la stabilité</p>-->
+            <!--<p>protocol raft utilisé pour remonter les logs de transactions de core vers edges</p>-->
+            <!--</aside>-->
             <!--</section>-->
             <section>
                 <h1>Architecture</h1>
