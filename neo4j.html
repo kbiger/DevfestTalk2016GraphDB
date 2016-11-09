@@ -462,9 +462,12 @@
             </section>
             <section>
                 <pre><code class="cypher">
-MATCH (foo:ROBOT)-[rel:LOVES]->(bar:ROBOT)
+MATCH (foo:ROBOT)-
+      [rel:LOVES]->(bar:ROBOT)
 WHERE rel.duration > 5
-RETURN foo.name, bar.name, rel.duration
+RETURN foo.name,
+       bar.name,
+       rel.duration
                 </code></pre>
             </section>
             <section>
@@ -476,7 +479,8 @@ RETURN you
             <section>
                 <pre><code class="cypher">
 MATCH (you:PERSON {name:"You"})
-CREATE (you)-[like:LIKE]->(neo:DATABASE {name:"Neo4j" })
+CREATE (you)-[like:LIKE]->
+       (neo:DATABASE{name:"Neo4j"})
 RETURN you,like,neo
                 </code></pre>
             </section>
@@ -553,7 +557,7 @@ RETURN you,like,neo
             <pre><code class="cypher">
 (me:Person)-[:Thank]->(you:Person)
             </code></pre>
-            <h2>Des questions?</h2>
+            <h1>Questions?</h1>
         </section>
         </section>
 
